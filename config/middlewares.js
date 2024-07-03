@@ -1,14 +1,28 @@
 module.exports = [
-  'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+        },
+      },
+    },
+  },
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:5173'],
+      enabled: true,
+      origin: ['https://resume-ai-psi.vercel.app'], // Add your frontend URL here
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      keepHeadersOnError: false,
     },
   },
   'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
