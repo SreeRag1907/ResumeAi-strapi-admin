@@ -7,6 +7,9 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          upgradeInsecureRequests: null,
         },
       },
     },
@@ -14,12 +17,13 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://resume-ai-psi.vercel.app'], // Add your frontend URL here
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
-      headers: ['Content-Type', 'Authorization'], // Ensure 'Authorization' header is included
-      expose: ['WWW-Authenticate', 'Server-Authorization'],
+      enabled: true,
+      origin: ['https://resume-ai-psi.vercel.app'], // Replace with your Vercel frontend URL
+      exposedHeaders: ['WWW-Authenticate', 'Server-Authorization', 'Content-Type'],
+      maxAge: 31536000,
       credentials: true,
-      maxAge: 86400,
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     },
   },
   'strapi::poweredBy',
