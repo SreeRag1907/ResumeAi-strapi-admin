@@ -14,11 +14,12 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
-      origin: ['https://resume-ai-psi.vercel.app'], // Add your frontend URL here
+      origin: ['http://localhost:5173'], // Add your frontend URL here
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      keepHeadersOnError: false,
+      headers: ['Content-Type', 'Authorization'], // Ensure 'Authorization' header is included
+      expose: ['WWW-Authenticate', 'Server-Authorization'],
+      credentials: true,
+      maxAge: 86400,
     },
   },
   'strapi::poweredBy',
