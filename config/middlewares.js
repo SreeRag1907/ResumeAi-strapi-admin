@@ -14,7 +14,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:5173'], // Add your frontend URL here
+      origin: ['https://resume-ai-psi.vercel.app'], // Add your frontend URL here
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
       headers: ['Content-Type', 'Authorization'], // Ensure 'Authorization' header is included
       expose: ['WWW-Authenticate', 'Server-Authorization'],
