@@ -18,7 +18,8 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['https://resume-ai-psi.vercel.app'], // Replace with your Vercel frontend URL
+      origin: ['http://localhost:5173','https://resume-ai-psi.vercel.app'], // development
+      // origin: ['https://resume-ai-psi.vercel.app'], // production
       exposedHeaders: ['WWW-Authenticate', 'Server-Authorization', 'Content-Type'],
       maxAge: 31536000,
       credentials: true,
