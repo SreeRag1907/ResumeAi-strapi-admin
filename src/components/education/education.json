@@ -7,22 +7,27 @@
   "options": {},
   "attributes": {
     "universityName": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 1000
     },
     "degree": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 1000
     },
     "subject": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 1000
     },
     "startDate": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 255
     },
     "endDate": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 255
     },
     "description": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
