@@ -5,6 +5,7 @@ export interface EducationEducation extends Schema.Component {
   info: {
     displayName: 'Education';
     icon: 'book';
+    description: '';
   };
   attributes: {
     universityName: Attribute.String;
@@ -12,7 +13,7 @@ export interface EducationEducation extends Schema.Component {
     subject: Attribute.String;
     startDate: Attribute.String;
     endDate: Attribute.String;
-    description: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
